@@ -27,8 +27,8 @@ app.UseHttpMetrics();
 app.UseRouting();
 app.UseEndpoints(endpoints =>
 {
-     endpoints.MapControllers();
-     endpoints.MapMetrics();
+    endpoints.MapControllers();
+    endpoints.MapMetrics();
 });
 
 app.Run();
