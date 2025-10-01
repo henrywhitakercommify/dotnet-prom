@@ -34,4 +34,11 @@ public class StringController : ControllerBase
         string message = String.Format("slept for {0}ms", duration.ToString());
         return Results.Ok(message);
     }
+
+    [HttpPost("error")]
+    public IResult Throw()
+    {
+        throw new Exception("some error");
+        return Results.Ok("string method");
+    }
 }
