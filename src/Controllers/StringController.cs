@@ -1,5 +1,6 @@
 using Prometheus;
 using Microsoft.AspNetCore.Mvc;
+using Services;
 
 namespace Controllers;
 
@@ -38,7 +39,8 @@ public class StringController : ControllerBase
     [HttpPost("error")]
     public IResult Throw()
     {
-        throw new Exception("some error");
+        SomeService service = new SomeService();
+        service.doSomething();
         return Results.Ok("string method");
     }
 }
